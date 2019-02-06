@@ -13,6 +13,9 @@
 
   <% if logged_in? %>
     <%= current_user.username %>
+    <br>
+    <a href="<%= subs_url %>"> All Subs </a>
+    <br>
     <form action="<%= session_url %>" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

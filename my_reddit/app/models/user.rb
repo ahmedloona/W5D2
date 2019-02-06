@@ -5,6 +5,16 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :subs,
+  primary_key: :id,
+  foreign_key: :moderator_id,
+  class_name: :Sub
+
+  has_many :posts,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: :Post
+
   attr_reader :password
 
   def password=(password)

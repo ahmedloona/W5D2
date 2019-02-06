@@ -1,6 +1,8 @@
 
 <h2> All Users </h2>
 
+<ul>
 <% @users.each do |user| %>
-  <%= user.username %>
+  <li><%= user.username %></li>
 <% end %>
+</ul>
